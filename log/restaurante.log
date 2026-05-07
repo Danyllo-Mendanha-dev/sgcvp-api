@@ -1,0 +1,350 @@
+2026-05-06T14:31:20.553-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 10948 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\Estudos de Casos\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\Estudos de Casos\restaurante)
+2026-05-06T14:31:20.573-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T14:31:20.760-04:00  INFO 10948 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T14:31:20.778-04:00  INFO 10948 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T14:31:23.261-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T14:31:23.485-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 192 ms. Found 5 JPA repository interfaces.
+2026-05-06T14:31:24.924-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T14:31:24.957-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T14:31:24.959-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T14:31:25.079-04:00  INFO 10948 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T14:31:25.080-04:00  INFO 10948 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4284 ms
+2026-05-06T14:31:25.499-04:00  INFO 10948 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T14:31:25.642-04:00  INFO 10948 --- [restaurante] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-06T14:31:25.766-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T14:31:26.605-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T14:31:26.684-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T14:31:27.065-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T14:31:27.069-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-06T14:31:27.194-04:00  INFO 10948 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T14:31:28.817-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T14:31:28.950-04:00  INFO 10948 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T14:31:29.972-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-06T14:31:31.149-04:00  WARN 10948 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T14:31:31.901-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T14:31:32.071-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T14:31:32.146-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T14:31:32.162-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 12.521 seconds (process running for 13.162)
+2026-05-06T14:31:58.139-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-06T14:31:58.139-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-06T14:31:58.140-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-06T14:31:58.598-04:00  WARN 10948 --- [restaurante] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-05-06T14:32:08.205-04:00  WARN 10948 --- [restaurante] [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : Request method 'GET' is not supported
+2026-05-06T14:32:08.208-04:00  WARN 10948 --- [restaurante] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-05-06T14:58:26.835-04:00  WARN 10948 --- [restaurante] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-05-06T14:59:49.907-04:00  INFO 10948 --- [restaurante] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-06T14:59:49.917-04:00  INFO 10948 --- [restaurante] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06T14:59:49.991-04:00  INFO 10948 --- [restaurante] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-06T14:59:49.995-04:00  INFO 10948 --- [restaurante] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T14:59:50.001-04:00  WARN 10948 --- [restaurante] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-05-06T14:59:50.002-04:00  INFO 10948 --- [restaurante] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-06T14:59:50.005-04:00  INFO 10948 --- [restaurante] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-06T14:59:50.106-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 10948 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\Estudos de Casos\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\Estudos de Casos\restaurante)
+2026-05-06T14:59:50.108-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T14:59:50.383-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T14:59:50.418-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2026-05-06T14:59:50.523-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T14:59:50.525-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T14:59:50.525-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T14:59:50.551-04:00  INFO 10948 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T14:59:50.551-04:00  INFO 10948 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 441 ms
+2026-05-06T14:59:50.634-04:00  INFO 10948 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T14:59:50.645-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T14:59:50.675-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T14:59:50.677-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-06T14:59:50.679-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn20: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T14:59:50.680-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-06T14:59:50.681-04:00  INFO 10948 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T14:59:50.792-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T14:59:50.806-04:00  INFO 10948 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T14:59:50.941-04:00  WARN 10948 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T14:59:51.011-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T14:59:51.033-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T14:59:51.045-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T14:59:51.051-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 0.988 seconds (process running for 1712.05)
+2026-05-06T14:59:51.205-04:00  INFO 10948 --- [restaurante] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-06T15:48:54.925-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 10948 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante)
+2026-05-06T15:48:54.930-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T15:48:55.004-04:00  INFO 10948 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T15:48:55.004-04:00  INFO 10948 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T15:48:55.867-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T15:48:56.011-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 5 JPA repository interfaces.
+2026-05-06T15:48:56.992-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T15:48:57.008-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T15:48:57.009-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T15:48:57.057-04:00  INFO 10948 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T15:48:57.058-04:00  INFO 10948 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2053 ms
+2026-05-06T15:48:57.278-04:00  INFO 10948 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T15:48:57.340-04:00  INFO 10948 --- [restaurante] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-06T15:48:57.388-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T15:48:57.694-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T15:48:57.726-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T15:48:57.900-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T15:48:57.903-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-06T15:48:57.982-04:00  INFO 10948 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T15:48:58.867-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T15:48:58.950-04:00  INFO 10948 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:48:59.395-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-06T15:48:59.943-04:00  WARN 10948 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T15:49:00.256-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T15:49:00.348-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T15:49:00.394-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T15:49:00.405-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 6.241 seconds (process running for 6.637)
+2026-05-06T15:49:16.294-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-06T15:49:16.294-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-06T15:49:16.294-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-06T15:50:31.232-04:00  INFO 10948 --- [restaurante] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 29 class path changes (0 additions, 0 deletions, 29 modifications)
+2026-05-06T15:50:31.237-04:00  INFO 10948 --- [restaurante] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06T15:50:31.297-04:00  INFO 10948 --- [restaurante] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-06T15:50:31.300-04:00  INFO 10948 --- [restaurante] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:50:31.310-04:00  WARN 10948 --- [restaurante] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-05-06T15:50:31.311-04:00  INFO 10948 --- [restaurante] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-06T15:50:31.314-04:00  INFO 10948 --- [restaurante] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-06T15:50:31.433-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 10948 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante)
+2026-05-06T15:50:31.434-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T15:50:31.760-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T15:50:31.805-04:00  INFO 10948 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2026-05-06T15:50:32.033-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T15:50:32.036-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T15:50:32.037-04:00  INFO 10948 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T15:50:32.074-04:00  INFO 10948 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T15:50:32.075-04:00  INFO 10948 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 638 ms
+2026-05-06T15:50:32.157-04:00  INFO 10948 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T15:50:32.162-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T15:50:32.186-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T15:50:32.190-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-06T15:50:32.194-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T15:50:32.195-04:00  INFO 10948 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-06T15:50:32.197-04:00  INFO 10948 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T15:50:32.377-04:00  INFO 10948 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T15:50:32.396-04:00  INFO 10948 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:50:32.669-04:00  WARN 10948 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T15:50:32.785-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T15:50:32.818-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T15:50:32.835-04:00  INFO 10948 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T15:50:32.843-04:00  INFO 10948 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 1.465 seconds (process running for 99.075)
+2026-05-06T15:50:33.088-04:00  INFO 10948 --- [restaurante] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-06T15:50:39.628-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-06T15:50:39.629-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-06T15:50:39.631-04:00  INFO 10948 --- [restaurante] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-06T15:51:53.923-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 26152 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante)
+2026-05-06T15:51:53.928-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T15:51:54.005-04:00  INFO 26152 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T15:51:54.005-04:00  INFO 26152 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T15:51:54.801-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T15:51:54.951-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
+2026-05-06T15:51:55.728-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T15:51:55.746-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T15:51:55.746-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T15:51:55.808-04:00  INFO 26152 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T15:51:55.809-04:00  INFO 26152 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1803 ms
+2026-05-06T15:51:56.061-04:00  INFO 26152 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T15:51:56.124-04:00  INFO 26152 --- [restaurante] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-06T15:51:56.160-04:00  INFO 26152 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T15:51:56.451-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T15:51:56.483-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T15:51:56.672-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T15:51:56.675-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-06T15:51:56.753-04:00  INFO 26152 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T15:51:57.902-04:00  INFO 26152 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T15:51:57.975-04:00  INFO 26152 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:51:58.516-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-06T15:51:59.004-04:00  WARN 26152 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T15:51:59.363-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T15:51:59.465-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T15:51:59.516-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T15:51:59.528-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 6.23 seconds (process running for 6.626)
+2026-05-06T15:54:22.233-04:00  INFO 26152 --- [restaurante] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-06T15:54:22.238-04:00  INFO 26152 --- [restaurante] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06T15:54:22.298-04:00  INFO 26152 --- [restaurante] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-06T15:54:22.302-04:00  INFO 26152 --- [restaurante] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:54:22.310-04:00  WARN 26152 --- [restaurante] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-05-06T15:54:22.310-04:00  INFO 26152 --- [restaurante] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-06T15:54:22.314-04:00  INFO 26152 --- [restaurante] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-06T15:54:22.422-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 26152 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante)
+2026-05-06T15:54:22.423-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T15:54:22.989-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T15:54:23.035-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2026-05-06T15:54:23.212-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T15:54:23.214-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T15:54:23.215-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T15:54:23.256-04:00  INFO 26152 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T15:54:23.257-04:00  INFO 26152 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 831 ms
+2026-05-06T15:54:23.353-04:00  INFO 26152 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T15:54:23.358-04:00  INFO 26152 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T15:54:23.379-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T15:54:23.385-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-06T15:54:23.390-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T15:54:23.391-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-06T15:54:23.399-04:00  INFO 26152 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T15:54:23.552-04:00  INFO 26152 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T15:54:23.566-04:00  INFO 26152 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:54:23.766-04:00  WARN 26152 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T15:54:23.840-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T15:54:23.858-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T15:54:23.870-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T15:54:23.874-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 1.507 seconds (process running for 150.972)
+2026-05-06T15:54:23.994-04:00  INFO 26152 --- [restaurante] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-06T15:54:32.546-04:00  INFO 26152 --- [restaurante] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-06T15:54:32.549-04:00  INFO 26152 --- [restaurante] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06T15:54:32.598-04:00  INFO 26152 --- [restaurante] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-06T15:54:32.600-04:00  INFO 26152 --- [restaurante] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:54:32.601-04:00  WARN 26152 --- [restaurante] [Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-05-06T15:54:32.602-04:00  INFO 26152 --- [restaurante] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-06T15:54:32.602-04:00  INFO 26152 --- [restaurante] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-06T15:54:32.685-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 26152 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante)
+2026-05-06T15:54:32.685-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T15:54:32.945-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T15:54:32.972-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 5 JPA repository interfaces.
+2026-05-06T15:54:33.069-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T15:54:33.070-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T15:54:33.070-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T15:54:33.093-04:00  INFO 26152 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T15:54:33.095-04:00  INFO 26152 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 406 ms
+2026-05-06T15:54:33.152-04:00  INFO 26152 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T15:54:33.156-04:00  INFO 26152 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T15:54:33.165-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T15:54:33.166-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-05-06T15:54:33.168-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T15:54:33.168-04:00  INFO 26152 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-05-06T15:54:33.169-04:00  INFO 26152 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T15:54:33.266-04:00  INFO 26152 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T15:54:33.277-04:00  INFO 26152 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:54:33.409-04:00  WARN 26152 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T15:54:33.481-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T15:54:33.496-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T15:54:33.508-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T15:54:33.513-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 0.863 seconds (process running for 160.611)
+2026-05-06T15:54:33.649-04:00  INFO 26152 --- [restaurante] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-05-06T15:54:41.148-04:00  INFO 26152 --- [restaurante] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-05-06T15:54:41.149-04:00  INFO 26152 --- [restaurante] [Thread-12] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06T15:54:41.194-04:00  INFO 26152 --- [restaurante] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-06T15:54:41.195-04:00  INFO 26152 --- [restaurante] [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T15:54:41.198-04:00  WARN 26152 --- [restaurante] [Thread-12] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-05-06T15:54:41.198-04:00  INFO 26152 --- [restaurante] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-05-06T15:54:41.198-04:00  INFO 26152 --- [restaurante] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-05-06T15:54:41.283-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 17.0.6 with PID 26152 (C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante\target\classes started by evand in C:\Users\evand\Dropbox\Programação Orientada a Serviços\REST-Spring\Exemplo BD\restaurante)
+2026-05-06T15:54:41.284-04:00  INFO 26152 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T15:54:41.483-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T15:54:41.510-04:00  INFO 26152 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2026-05-06T15:54:41.597-04:00  INFO 26152 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T15:54:41.598-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T15:54:41.598-04:00  INFO 26152 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T15:54:41.619-04:00  INFO 26152 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T19:35:31.171-04:00  INFO 19732 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Starting RestauranteApplication using Java 25.0.2 with PID 19732 (C:\Users\Admin\Desktop\IFMT\5_Semestre\ProgramaÃ§Ã£o Orientada a ServiÃ§os\restaurante\target\classes started by Admin in C:\Users\Admin\Desktop\IFMT\5_Semestre\ProgramaÃ§Ã£o Orientada a ServiÃ§os\restaurante)
+2026-05-06T19:35:31.176-04:00  INFO 19732 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T19:35:31.262-04:00  INFO 19732 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-06T19:35:31.262-04:00  INFO 19732 --- [restaurante] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-06T19:35:32.495-04:00  INFO 19732 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T19:35:32.603-04:00  INFO 19732 --- [restaurante] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 5 JPA repository interfaces.
+2026-05-06T19:35:33.523-04:00  INFO 19732 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-06T19:35:33.550-04:00  INFO 19732 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-06T19:35:33.550-04:00  INFO 19732 --- [restaurante] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-06T19:35:33.619-04:00  INFO 19732 --- [restaurante] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-06T19:35:33.619-04:00  INFO 19732 --- [restaurante] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2355 ms
+2026-05-06T19:35:33.959-04:00  INFO 19732 --- [restaurante] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T19:35:34.082-04:00  INFO 19732 --- [restaurante] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-06T19:35:34.140-04:00  INFO 19732 --- [restaurante] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T19:35:34.618-04:00  INFO 19732 --- [restaurante] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T19:35:34.658-04:00  INFO 19732 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T19:35:34.938-04:00  INFO 19732 --- [restaurante] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T19:35:34.940-04:00  INFO 19732 --- [restaurante] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-06T19:35:35.034-04:00  INFO 19732 --- [restaurante] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T19:35:36.223-04:00  INFO 19732 --- [restaurante] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T19:35:36.325-04:00  INFO 19732 --- [restaurante] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T19:35:36.844-04:00  INFO 19732 --- [restaurante] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-06T19:35:37.336-04:00  WARN 19732 --- [restaurante] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T19:35:37.702-04:00  INFO 19732 --- [restaurante] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T19:35:37.789-04:00  INFO 19732 --- [restaurante] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-05-06T19:35:37.826-04:00  INFO 19732 --- [restaurante] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-06T19:35:37.835-04:00  INFO 19732 --- [restaurante] [restartedMain] i.c.restaurante.RestauranteApplication   : Started RestauranteApplication in 7.667 seconds (process running for 8.834)
+2026-05-06T19:38:56.087-04:00  INFO 19732 --- [restaurante] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06T19:38:56.142-04:00  INFO 19732 --- [restaurante] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-06T19:38:56.160-04:00  INFO 19732 --- [restaurante] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T19:38:56.235-04:00  WARN 19732 --- [restaurante] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-05-06T19:38:56.236-04:00  INFO 19732 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-06T19:38:56.243-04:00  INFO 19732 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-06T20:21:55.409-04:00  INFO 12348 --- [restaurante] [main] i.c.r.RestauranteApplicationTests        : Starting RestauranteApplicationTests using Java 25.0.2 with PID 12348 (started by Admin in C:\Users\Admin\Desktop\IFMT\5_Semestre\Programa‡Æo Orientada a Servi‡os\restaurante)
+2026-05-06T20:21:55.412-04:00  INFO 12348 --- [restaurante] [main] i.c.r.RestauranteApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T20:21:56.728-04:00  INFO 12348 --- [restaurante] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T20:21:56.881-04:00  INFO 12348 --- [restaurante] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 5 JPA repository interfaces.
+2026-05-06T20:21:57.736-04:00  INFO 12348 --- [restaurante] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T20:21:57.877-04:00  INFO 12348 --- [restaurante] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-06T20:21:57.980-04:00  INFO 12348 --- [restaurante] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T20:21:58.846-04:00  INFO 12348 --- [restaurante] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T20:21:58.930-04:00  INFO 12348 --- [restaurante] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T20:21:59.352-04:00  INFO 12348 --- [restaurante] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T20:21:59.356-04:00  INFO 12348 --- [restaurante] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-06T20:21:59.483-04:00  INFO 12348 --- [restaurante] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T20:22:00.853-04:00  INFO 12348 --- [restaurante] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T20:22:01.007-04:00  INFO 12348 --- [restaurante] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T20:22:01.939-04:00  INFO 12348 --- [restaurante] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-06T20:22:02.881-04:00  WARN 12348 --- [restaurante] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T20:22:03.447-04:00  INFO 12348 --- [restaurante] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T20:22:03.566-04:00  INFO 12348 --- [restaurante] [main] i.c.r.RestauranteApplicationTests        : Started RestauranteApplicationTests in 8.862 seconds (process running for 11.132)
+2026-05-06T20:22:04.971-04:00  INFO 12348 --- [restaurante] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T20:22:04.975-04:00  INFO 12348 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-06T20:22:04.982-04:00  INFO 12348 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
