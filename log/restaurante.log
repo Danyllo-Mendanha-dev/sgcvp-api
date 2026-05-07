@@ -348,3 +348,31 @@
 2026-05-06T20:22:04.971-04:00  INFO 12348 --- [restaurante] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-06T20:22:04.975-04:00  INFO 12348 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-05-06T20:22:04.982-04:00  INFO 12348 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-06T20:58:11.938-04:00  INFO 20472 --- [restaurante] [main] i.c.exemplo.RestauranteApplicationTests  : Starting RestauranteApplicationTests using Java 25.0.2 with PID 20472 (started by Admin in C:\Users\Admin\Desktop\IFMT\5_Semestre\Programa‡Æo Orientada a Servi‡os\restaurante)
+2026-05-06T20:58:11.943-04:00  INFO 20472 --- [restaurante] [main] i.c.exemplo.RestauranteApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-05-06T20:58:14.402-04:00  INFO 20472 --- [restaurante] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-06T20:58:14.618-04:00  INFO 20472 --- [restaurante] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 182 ms. Found 5 JPA repository interfaces.
+2026-05-06T20:58:15.973-04:00  INFO 20472 --- [restaurante] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-06T20:58:16.233-04:00  INFO 20472 --- [restaurante] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-06T20:58:16.435-04:00  INFO 20472 --- [restaurante] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-06T20:58:17.754-04:00  INFO 20472 --- [restaurante] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-06T20:58:17.906-04:00  INFO 20472 --- [restaurante] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-06T20:58:18.889-04:00  INFO 20472 --- [restaurante] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:restauranteDB user=SA
+2026-05-06T20:58:18.895-04:00  INFO 20472 --- [restaurante] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-06T20:58:19.101-04:00  INFO 20472 --- [restaurante] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06T20:58:21.734-04:00  INFO 20472 --- [restaurante] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06T20:58:21.917-04:00  INFO 20472 --- [restaurante] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T20:58:23.811-04:00  INFO 20472 --- [restaurante] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-06T20:58:25.466-04:00  WARN 20472 --- [restaurante] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06T20:58:26.314-04:00  INFO 20472 --- [restaurante] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:restauranteDB'
+2026-05-06T20:58:26.511-04:00  INFO 20472 --- [restaurante] [main] i.c.exemplo.RestauranteApplicationTests  : Started RestauranteApplicationTests in 15.31 seconds (process running for 17.584)
+2026-05-06T20:58:28.466-04:00  INFO 20472 --- [restaurante] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-06T20:58:28.473-04:00  INFO 20472 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-06T20:58:28.478-04:00  INFO 20472 --- [restaurante] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
