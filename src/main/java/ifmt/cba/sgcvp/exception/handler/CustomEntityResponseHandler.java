@@ -1,10 +1,15 @@
 package ifmt.cba.sgcvp.exception.handler;
 
 import ifmt.cba.sgcvp.exception.ExceptionResponse;
+import ifmt.cba.sgcvp.exception.EstoqueInsuficienteException;
 import ifmt.cba.sgcvp.exception.NotFoundException;
 import ifmt.cba.sgcvp.exception.NotValidDataException;
+import ifmt.cba.sgcvp.exception.TransicaoEstadoInvalidaException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +47,44 @@ public class CustomEntityResponseHandler  extends ResponseEntityExceptionHandler
         ExceptionResponse response = new ExceptionResponse(
             new Date(), 
             ex.getMessage(),
+            request.getDescription(false));
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(EstoqueInsuficienteException.class)
+    public final ResponseEntity<ExceptionResponse> handleEstoqueInsuficienteException(Exception ex, WebRequest request){
+        ExceptionResponse response = new ExceptionResponse(
+            new Date(),
+            ex.getMessage(),
+            request.getDescription(false));
+
+        return new ResponseEntity<>(response, HttpStatus.UNPROCESSABLE_ENTITY);
+    }
+
+    @ExceptionHandler(TransicaoEstadoInvalidaException.class)
+    public final ResponseEntity<ExceptionResponse> handleTransicaoEstadoInvalidaException(Exception ex, WebRequest request){
+        ExceptionResponse response = new ExceptionResponse(
+            new Date(),
+            ex.getMessage(),
+            request.getDescription(false));
+
+        return new ResponseEntity<>(response, HttpStatus.UNPROCESSABLE_ENTITY);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+            HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+        String mensagem = ex.getBindingResult()
+            .getFieldErrors()
+            .stream()
+            .map(erro -> erro.getField() + ": " + erro.getDefaultMessage())
+            .findFirst()
+            .orElse("Dados invalidos");
+
+        ExceptionResponse response = new ExceptionResponse(
+            new Date(),
+            mensagem,
             request.getDescription(false));
 
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
