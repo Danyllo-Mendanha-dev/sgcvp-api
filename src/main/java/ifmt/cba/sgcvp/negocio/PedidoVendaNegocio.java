@@ -77,7 +77,7 @@ public class PedidoVendaNegocio {
             this.prepararRelacionamentos(pedidoVenda);
             pedidoVenda = pedidoVendaRepository.save(pedidoVenda);
             logger.info("Pedido de venda incluido com codigo {}", pedidoVenda.getCodigo());
-        } catch (NotFoundException | NotValidDataException ex) {
+        } catch (NotFoundException ex) {
             throw ex;
         } catch (Exception ex) {
             logger.error("Erro ao incluir pedido de venda", ex);
@@ -103,7 +103,7 @@ public class PedidoVendaNegocio {
             this.prepararRelacionamentos(pedidoVenda);
             pedidoVenda = pedidoVendaRepository.save(pedidoVenda);
             logger.info("Pedido de venda alterado com codigo {}", pedidoVenda.getCodigo());
-        } catch (NotFoundException | NotValidDataException ex) {
+        } catch (NotFoundException ex) {
             throw ex;
         } catch (Exception ex) {
             logger.error("Erro ao alterar pedido de venda", ex);

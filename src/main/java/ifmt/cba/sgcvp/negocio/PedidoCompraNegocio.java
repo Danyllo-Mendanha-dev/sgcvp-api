@@ -91,7 +91,7 @@ public class PedidoCompraNegocio {
             this.prepararRelacionamentos(pedidoCompra);
             pedidoCompra = pedidoCompraRepository.save(pedidoCompra);
             logger.info("Pedido de compra alterado com codigo {}", pedidoCompra.getCodigo());
-        } catch (NotFoundException | NotValidDataException ex) {
+        } catch (NotFoundException ex) {
             throw ex;
         } catch (Exception ex) {
             logger.error("Erro ao alterar pedido de compra", ex);

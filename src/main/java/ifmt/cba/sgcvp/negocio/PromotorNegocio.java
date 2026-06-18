@@ -83,7 +83,7 @@ public class PromotorNegocio {
             promotor.setListaMunicipio(this.pesquisarMunicipios(promotor.getListaMunicipio()));
             promotor = promotorRepository.save(promotor);
             logger.info("Promotor alterado com codigo {}", promotor.getCodigo());
-        } catch (NotFoundException | NotValidDataException ex) {
+        } catch (NotFoundException ex) {
             throw ex;
         } catch (Exception ex) {
             logger.error("Erro ao alterar promotor", ex);

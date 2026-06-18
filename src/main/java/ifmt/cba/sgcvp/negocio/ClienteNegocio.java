@@ -79,7 +79,7 @@ public class ClienteNegocio {
             cliente.setPromotor(this.pesquisarPromotor(cliente.getPromotor().getCodigo()));
             cliente = clienteRepository.save(cliente);
             logger.info("Cliente alterado com codigo {}", cliente.getCodigo());
-        } catch (NotFoundException | NotValidDataException ex) {
+        } catch (NotFoundException ex) {
             throw ex;
         } catch (Exception ex) {
             logger.error("Erro ao alterar cliente", ex);

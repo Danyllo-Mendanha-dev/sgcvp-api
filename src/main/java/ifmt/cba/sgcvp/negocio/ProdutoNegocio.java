@@ -78,7 +78,7 @@ public class ProdutoNegocio {
             produto.setCategoriaProduto(this.pesquisarCategoriaProduto(produto.getCategoriaProduto().getCodigo()));
             produto = produtoRepository.save(produto);
             logger.info("Produto alterado com codigo {}", produto.getCodigo());
-        } catch (NotFoundException | NotValidDataException ex) {
+        } catch (NotFoundException ex) {
             throw ex;
         } catch (Exception ex) {
             logger.error("Erro ao alterar produto", ex);
