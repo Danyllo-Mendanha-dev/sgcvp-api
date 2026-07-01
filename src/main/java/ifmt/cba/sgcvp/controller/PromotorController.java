@@ -26,11 +26,22 @@ import ifmt.cba.sgcvp.dto.MunicipioDTO;
 import ifmt.cba.sgcvp.exception.NotFoundException;
 import ifmt.cba.sgcvp.exception.NotValidDataException;
 import ifmt.cba.sgcvp.negocio.PromotorNegocio;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController()
 @RequestMapping("/promotor")
+@Tag(name = "Promotores", description = "Operacoes relacionadas ao gerenciamento de promotores de venda.")
+@ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Operacao realizada com sucesso"),
+        @ApiResponse(responseCode = "400", description = "Dados invalidos enviados na requisicao"),
+        @ApiResponse(responseCode = "404", description = "Recurso nao encontrado"),
+        @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
+})
 public class PromotorController {
 
     private static final Logger logger = LoggerFactory.getLogger(PromotorController.class);
@@ -39,6 +50,7 @@ public class PromotorController {
     private PromotorNegocio promotorNegocio;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Listar promotores", description = "Retorna todos os promotores cadastrados.")
     public CollectionModel<EntityModel<PromotorDTO>> buscarTodos() throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para buscar todos os promotores");
         List<EntityModel<PromotorDTO>> listaPromotorTempDTO = promotorNegocio.pesquisaTodos().stream()
@@ -50,7 +62,10 @@ public class PromotorController {
     }
 
     @GetMapping(value = "/codigo/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public EntityModel<PromotorDTO> buscarPorID(@PathVariable("codigo") int codigo)
+    @Operation(summary = "Buscar promotor por codigo", description = "Retorna um promotor a partir do seu codigo identificador.")
+    public EntityModel<PromotorDTO> buscarPorID(
+            @Parameter(description = "Codigo do promotor", example = "1", required = true)
+            @PathVariable("codigo") int codigo)
             throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para buscar promotor por codigo {}", codigo);
         PromotorDTO promotorTempDTO = promotorNegocio.pesquisaCodigo(codigo);
@@ -58,7 +73,10 @@ public class PromotorController {
     }
 
     @GetMapping(value = "/nome/{nome}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public EntityModel<PromotorDTO> buscarPorNome(@PathVariable("nome") String nome)
+    @Operation(summary = "Buscar promotor por nome", description = "Retorna um promotor pelo nome informado.")
+    public EntityModel<PromotorDTO> buscarPorNome(
+            @Parameter(description = "Nome ou parte inicial do nome do promotor", example = "Maria", required = true)
+            @PathVariable("nome") String nome)
             throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para buscar promotor por nome {}", nome);
         PromotorDTO promotorTempDTO = promotorNegocio.pesquisaPorNome(nome);
@@ -66,6 +84,7 @@ public class PromotorController {
     }
 
     @GetMapping(value = "/{codigo}/municipios", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Listar municipios do promotor", description = "Retorna os municipios atendidos por um promotor.")
     public CollectionModel<EntityModel<MunicipioDTO>> buscarMunicipiosAtendidos(
             @Parameter(description = "Codigo do promotor de venda", required = true)
             @PathVariable("codigo") int codigo)
@@ -81,6 +100,7 @@ public class PromotorController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Cadastrar promotor", description = "Cadastra um novo promotor de venda.")
     public EntityModel<PromotorDTO> inserirPromotor(@Valid @RequestBody PromotorDTO promotorDTO)
             throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para inserir promotor");
@@ -89,6 +109,7 @@ public class PromotorController {
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Alterar promotor", description = "Atualiza os dados de um promotor existente.")
     public EntityModel<PromotorDTO> alterarPromotor(@Valid @RequestBody PromotorDTO promotorDTO)
             throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para alterar promotor codigo {}", promotorDTO.getCodigo());
@@ -97,7 +118,10 @@ public class PromotorController {
     }
 
     @DeleteMapping(value = "/{codigo}")
-    public ResponseEntity<?> excluirPromotor(@PathVariable("codigo") int codigo)
+    @Operation(summary = "Excluir promotor", description = "Remove um promotor pelo codigo informado.")
+    public ResponseEntity<?> excluirPromotor(
+            @Parameter(description = "Codigo do promotor", example = "1", required = true)
+            @PathVariable("codigo") int codigo)
             throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para excluir promotor codigo {}", codigo);
         promotorNegocio.excluir(codigo);

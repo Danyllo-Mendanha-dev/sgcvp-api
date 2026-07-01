@@ -24,10 +24,21 @@ import ifmt.cba.sgcvp.dto.LancamentoComissaoDTO;
 import ifmt.cba.sgcvp.exception.NotFoundException;
 import ifmt.cba.sgcvp.exception.TransicaoEstadoInvalidaException;
 import ifmt.cba.sgcvp.negocio.LancamentoComissaoNegocio;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController()
 @RequestMapping("/lancamento-comissao")
+@Tag(name = "Lancamentos de Comissao", description = "Operacoes relacionadas a consulta e quitacao de lancamentos de comissao.")
+@ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Operacao realizada com sucesso"),
+        @ApiResponse(responseCode = "400", description = "Dados invalidos enviados na requisicao"),
+        @ApiResponse(responseCode = "404", description = "Recurso nao encontrado"),
+        @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
+})
 public class LancamentoComissaoController {
 
     private static final Logger logger = LoggerFactory.getLogger(LancamentoComissaoController.class);
@@ -36,6 +47,7 @@ public class LancamentoComissaoController {
     private LancamentoComissaoNegocio lancamentoComissaoNegocio;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Listar lancamentos de comissao", description = "Retorna todos os lancamentos de comissao cadastrados.")
     public CollectionModel<EntityModel<LancamentoComissaoDTO>> buscarTodos() throws NotFoundException {
         logger.info("Requisicao para buscar todos os lancamentos de comissao");
         List<EntityModel<LancamentoComissaoDTO>> listaLancamentoComissaoTempDTO = lancamentoComissaoNegocio
@@ -48,7 +60,10 @@ public class LancamentoComissaoController {
     }
 
     @GetMapping(value = "/codigo/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public EntityModel<LancamentoComissaoDTO> buscarPorID(@PathVariable("codigo") int codigo)
+    @Operation(summary = "Buscar lancamento por codigo", description = "Retorna um lancamento de comissao a partir do seu codigo identificador.")
+    public EntityModel<LancamentoComissaoDTO> buscarPorID(
+            @Parameter(description = "Codigo do lancamento de comissao", example = "1", required = true)
+            @PathVariable("codigo") int codigo)
             throws NotFoundException {
         logger.info("Requisicao para buscar lancamento de comissao por codigo {}", codigo);
         LancamentoComissaoDTO lancamentoComissaoTempDTO = lancamentoComissaoNegocio.pesquisaCodigo(codigo);
@@ -56,7 +71,10 @@ public class LancamentoComissaoController {
     }
 
     @GetMapping(value = "/status/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public CollectionModel<EntityModel<LancamentoComissaoDTO>> buscarPorStatus(@PathVariable("status") String status)
+    @Operation(summary = "Listar lancamentos por status", description = "Retorna lancamentos de comissao filtrados por status.")
+    public CollectionModel<EntityModel<LancamentoComissaoDTO>> buscarPorStatus(
+            @Parameter(description = "Status do lancamento de comissao", example = "LANCADA", required = true)
+            @PathVariable("status") String status)
             throws NotFoundException {
         logger.info("Requisicao para buscar lancamentos de comissao por status {}", status);
         List<EntityModel<LancamentoComissaoDTO>> listaLancamentoComissaoTempDTO = lancamentoComissaoNegocio
@@ -70,6 +88,7 @@ public class LancamentoComissaoController {
     }
 
     @GetMapping(value = "/lancadas/promotor/{codigoPromotor}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Listar comissoes lancadas por promotor", description = "Retorna comissoes lancadas para um promotor dentro do periodo informado.")
     public CollectionModel<EntityModel<LancamentoComissaoDTO>> buscarLancadasPorPeriodoPromotor(
             @Parameter(description = "Codigo do promotor de venda", required = true)
             @PathVariable("codigoPromotor") int codigoPromotor,
@@ -93,6 +112,7 @@ public class LancamentoComissaoController {
     }
 
     @GetMapping(value = "/quitadas/promotor/{codigoPromotor}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Listar comissoes quitadas por promotor", description = "Retorna comissoes quitadas para um promotor dentro do periodo informado.")
     public CollectionModel<EntityModel<LancamentoComissaoDTO>> buscarQuitadasPorPeriodoPromotor(
             @Parameter(description = "Codigo do promotor de venda", required = true)
             @PathVariable("codigoPromotor") int codigoPromotor,
@@ -116,7 +136,10 @@ public class LancamentoComissaoController {
     }
 
     @PatchMapping(value = "/{codigo}/quitar", produces = MediaType.APPLICATION_JSON_VALUE)
-    public EntityModel<LancamentoComissaoDTO> quitarLancamentoComissao(@PathVariable("codigo") int codigo)
+    @Operation(summary = "Quitar lancamento de comissao", description = "Executa a quitacao de um lancamento de comissao.")
+    public EntityModel<LancamentoComissaoDTO> quitarLancamentoComissao(
+            @Parameter(description = "Codigo do lancamento de comissao", example = "1", required = true)
+            @PathVariable("codigo") int codigo)
             throws NotFoundException, TransicaoEstadoInvalidaException {
         logger.info("Requisicao para quitar lancamento de comissao codigo {}", codigo);
         LancamentoComissaoDTO lancamentoComissaoTempDTO = lancamentoComissaoNegocio.quitar(codigo);

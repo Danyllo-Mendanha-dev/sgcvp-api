@@ -20,10 +20,21 @@ import ifmt.cba.sgcvp.dto.CategoriaProdutoDTO;
 import ifmt.cba.sgcvp.exception.NotFoundException;
 import ifmt.cba.sgcvp.exception.NotValidDataException;
 import ifmt.cba.sgcvp.negocio.CategoriaProdutoNegocio;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController()
 @RequestMapping("/categoria-produto")
+@Tag(name = "Categorias de Produto", description = "Operacoes relacionadas ao gerenciamento de categorias de produtos.")
+@ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Operacao realizada com sucesso"),
+        @ApiResponse(responseCode = "400", description = "Dados invalidos enviados na requisicao"),
+        @ApiResponse(responseCode = "404", description = "Recurso nao encontrado"),
+        @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
+})
 public class CategoriaProdutoController {
 
     private static final Logger logger = LoggerFactory.getLogger(CategoriaProdutoController.class);
@@ -32,6 +43,7 @@ public class CategoriaProdutoController {
     private CategoriaProdutoNegocio categoriaProdutoNegocio;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Listar categorias de produto", description = "Retorna todas as categorias de produto cadastradas.")
     public List<CategoriaProdutoDTO> buscarTodos() throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para buscar todas as categorias de produto");
         List<CategoriaProdutoDTO> listaCategoriaProdutoTempDTO = categoriaProdutoNegocio.pesquisaTodos();
@@ -39,6 +51,7 @@ public class CategoriaProdutoController {
     }
 
     @GetMapping(value = "/ordenadas-nome", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Listar categorias ordenadas por nome", description = "Retorna as categorias de produto ordenadas alfabeticamente pelo nome.")
     public List<CategoriaProdutoDTO> buscarTodasOrdenadasPorNome() throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para buscar categorias de produto ordenadas por nome");
         List<CategoriaProdutoDTO> listaCategoriaProdutoTempDTO = categoriaProdutoNegocio.pesquisaTodosOrdenadoPorNome();
@@ -46,6 +59,7 @@ public class CategoriaProdutoController {
     }
 
     @GetMapping(value = "/codigo/{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Buscar categoria por codigo", description = "Retorna uma categoria de produto a partir do seu codigo identificador.")
     public CategoriaProdutoDTO buscarPorID(
             @Parameter(description = "Codigo da categoria de produto", required = true)
             @PathVariable("codigo") int codigo)
@@ -56,6 +70,7 @@ public class CategoriaProdutoController {
     }
 
     @GetMapping(value = "/nome/{nome}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Buscar categoria por nome", description = "Retorna uma categoria de produto pelo nome informado.")
     public CategoriaProdutoDTO buscarPorNome(
             @Parameter(description = "Nome ou parte inicial do nome da categoria de produto", required = true)
             @PathVariable("nome") String nome)
@@ -66,6 +81,7 @@ public class CategoriaProdutoController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Cadastrar categoria de produto", description = "Cadastra uma nova categoria de produto.")
     public CategoriaProdutoDTO inserirCategoriaProduto(@RequestBody CategoriaProdutoDTO categoriaProdutoDTO)
             throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para inserir categoria de produto");
@@ -74,6 +90,7 @@ public class CategoriaProdutoController {
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Alterar categoria de produto", description = "Atualiza os dados de uma categoria de produto existente.")
     public CategoriaProdutoDTO alterarCategoriaProduto(@RequestBody CategoriaProdutoDTO categoriaProdutoDTO)
             throws NotFoundException, NotValidDataException {
         logger.info("Requisicao para alterar categoria de produto codigo {}", categoriaProdutoDTO.getCodigo());
@@ -82,6 +99,7 @@ public class CategoriaProdutoController {
     }
 
     @DeleteMapping(value = "/{codigo}")
+    @Operation(summary = "Excluir categoria de produto", description = "Remove uma categoria de produto pelo codigo informado.")
     public ResponseEntity<?> excluirCategoriaProduto(
             @Parameter(description = "Codigo da categoria de produto", required = true)
             @PathVariable("codigo") int codigo)

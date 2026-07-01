@@ -29,3 +29,12 @@ logging:
   file:
     name: log/sgcvp.log
     path: /log
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    display-request-duration: true

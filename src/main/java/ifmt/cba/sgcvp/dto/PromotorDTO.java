@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -21,14 +22,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = false)
+@Schema(description = "Dados de um promotor de venda.")
 public class PromotorDTO {
 
+    @Schema(description = "Codigo identificador do promotor", example = "1")
     private int codigo;
 
+    @Schema(description = "Nome do promotor de venda", example = "Maria Souza")
     @NotBlank(message = "Nome e obrigatorio")
     @Size(max = 150, message = "Nome deve possuir no maximo 150 caracteres")
     private String nome;
 
+    @Schema(description = "Municipios atendidos pelo promotor")
     @Valid
     @NotEmpty(message = "Promotor deve possuir ao menos um municipio de atuacao")
     private List<MunicipioDTO> listaMunicipio = new ArrayList<MunicipioDTO>();
