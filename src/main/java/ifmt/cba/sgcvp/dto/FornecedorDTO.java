@@ -19,6 +19,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Dados de um fornecedor.")
+// Transporta dados de fornecedor pela API.
 public class FornecedorDTO {
 
     @Schema(description = "Codigo identificador do fornecedor", example = "1")

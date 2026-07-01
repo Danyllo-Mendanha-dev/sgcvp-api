@@ -20,6 +20,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Dados de um cliente atendido pela empresa.")
+// Transporta dados cadastrais de cliente pela API.
 public class ClienteDTO {
 
     @Schema(description = "Codigo identificador do cliente", example = "1")

@@ -22,6 +22,7 @@ import lombok.Setter;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "fornecedor")
+// Representa um fornecedor usado em pedidos de compra.
 public class Fornecedor {
 
     @Id
@@ -43,6 +44,7 @@ public class Fornecedor {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
 
+    // Valida dados cadastrais obrigatorios do fornecedor.
     public String validar() {
         String retorno = "";
 

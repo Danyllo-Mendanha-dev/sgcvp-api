@@ -35,6 +35,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
         @ApiResponse(responseCode = "404", description = "Recurso nao encontrado"),
         @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
 })
+// Expoe endpoints REST para cadastro, consulta e estoque de produtos.
 public class ProdutoController {
 
     private static final Logger logger = LoggerFactory.getLogger(ProdutoController.class);

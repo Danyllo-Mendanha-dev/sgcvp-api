@@ -42,6 +42,7 @@ import jakarta.validation.Valid;
         @ApiResponse(responseCode = "404", description = "Recurso nao encontrado"),
         @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
 })
+// Expoe endpoints REST para cadastro e consulta de promotores.
 public class PromotorController {
 
     private static final Logger logger = LoggerFactory.getLogger(PromotorController.class);

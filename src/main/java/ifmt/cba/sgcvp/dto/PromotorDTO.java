@@ -23,6 +23,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Dados de um promotor de venda.")
+// Transporta dados de promotor pela API.
 public class PromotorDTO {
 
     @Schema(description = "Codigo identificador do promotor", example = "1")

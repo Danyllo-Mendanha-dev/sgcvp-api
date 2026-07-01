@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import ifmt.cba.sgcvp.entity.LancamentoComissao;
 import ifmt.cba.sgcvp.entity.PedidoVenda;
 
+// Acessa dados persistidos de lancamentos de comissao.
 public interface LancamentoComissaoRepository extends JpaRepository<LancamentoComissao, Integer> {
 
     LancamentoComissao findByPedidoVenda(PedidoVenda pedidoVenda);

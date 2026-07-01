@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import ifmt.cba.sgcvp.entity.CategoriaProduto;
 import ifmt.cba.sgcvp.entity.Produto;
 
+// Acessa dados persistidos de produtos.
 public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
 
     Produto findByNomeIgnoreCaseStartingWith(String nome);

@@ -39,6 +39,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
         @ApiResponse(responseCode = "404", description = "Recurso nao encontrado"),
         @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
 })
+// Expoe endpoints REST para consulta e quitacao de comissoes.
 public class LancamentoComissaoController {
 
     private static final Logger logger = LoggerFactory.getLogger(LancamentoComissaoController.class);

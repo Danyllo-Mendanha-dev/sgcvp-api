@@ -1,7 +1,6 @@
 package ifmt.cba.sgcvp.entity;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,14 +13,17 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "categoria_produto")
+// Representa uma categoria usada para classificar produtos.
 public class CategoriaProduto {
 
     @Id
@@ -34,11 +36,13 @@ public class CategoriaProduto {
     @Column(name = "descricao", length = 255)
     private String descricao;
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
+    @Column(name = "percentual_comissao", precision = 5, scale = 2)
+    private BigDecimal percentualComissao;
 
+    @Column(name = "percentual_desconto", precision = 5, scale = 2)
+    private BigDecimal percentualDesconto;
+
+    // Valida os campos obrigatorios e percentuais da categoria.
     public String validar() {
         String retorno = "";
 
@@ -48,6 +52,14 @@ public class CategoriaProduto {
 
         if (this.descricao != null && this.descricao.length() > 255) {
             retorno += "Descricao nao valida";
+        }
+
+        if (this.percentualComissao != null && this.percentualComissao.compareTo(BigDecimal.ZERO) < 0) {
+            retorno += "Percentual de comissao invalido";
+        }
+
+        if (this.percentualDesconto != null && this.percentualDesconto.compareTo(BigDecimal.ZERO) < 0) {
+            retorno += "Percentual de desconto invalido";
         }
 
         return retorno;

@@ -8,9 +8,11 @@ import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 
 @Configuration
+// Configura metadados exibidos na documentacao Swagger.
 public class SwaggerConfig {
 
     @Bean
+    // Cria a definicao OpenAPI usada pelo Swagger UI.
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()

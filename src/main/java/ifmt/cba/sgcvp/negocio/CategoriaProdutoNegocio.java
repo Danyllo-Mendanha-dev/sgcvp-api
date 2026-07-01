@@ -17,6 +17,7 @@ import ifmt.cba.sgcvp.repository.CategoriaProdutoRepository;
 import ifmt.cba.sgcvp.repository.ProdutoRepository;
 
 @Service
+// Centraliza as regras de cadastro e consulta de categorias de produto.
 public class CategoriaProdutoNegocio {
 
     private static final Logger logger = LoggerFactory.getLogger(CategoriaProdutoNegocio.class);
@@ -33,6 +34,7 @@ public class CategoriaProdutoNegocio {
         this.modelMapper = new ModelMapper();
     }
 
+    // Valida e cadastra uma nova categoria de produto.
     public CategoriaProdutoDTO inserir(CategoriaProdutoDTO categoriaProdutoDTO) throws NotValidDataException {
 
         CategoriaProduto categoriaProduto = this.toEntity(categoriaProdutoDTO);
@@ -57,6 +59,7 @@ public class CategoriaProdutoNegocio {
         return this.toDTO(categoriaProduto);
     }
 
+    // Valida e atualiza uma categoria de produto existente.
     public CategoriaProdutoDTO alterar(CategoriaProdutoDTO categoriaProdutoDTO)
             throws NotValidDataException, NotFoundException {
 
@@ -82,6 +85,7 @@ public class CategoriaProdutoNegocio {
         return this.toDTO(categoriaProduto);
     }
 
+    // Exclui uma categoria se ela nao estiver vinculada a produtos.
     public void excluir(int codigo) throws NotValidDataException, NotFoundException {
 
         try {
@@ -102,6 +106,7 @@ public class CategoriaProdutoNegocio {
         }
     }
 
+    // Retorna todas as categorias cadastradas.
     public List<CategoriaProdutoDTO> pesquisaTodos() throws NotFoundException {
         try {
             logger.info("Pesquisando todas as categorias de produto");
@@ -112,6 +117,7 @@ public class CategoriaProdutoNegocio {
         }
     }
 
+    // Retorna categorias ordenadas alfabeticamente por nome.
     public List<CategoriaProdutoDTO> pesquisaTodosOrdenadoPorNome() throws NotFoundException {
         try {
             logger.info("Pesquisando todas as categorias de produto ordenadas por nome");
@@ -122,6 +128,7 @@ public class CategoriaProdutoNegocio {
         }
     }
 
+    // Busca uma categoria pelo inicio do nome.
     public CategoriaProdutoDTO pesquisaPorNome(String parteNome) throws NotFoundException {
         try {
             logger.info("Pesquisando categoria de produto pelo nome {}", parteNome);
@@ -132,6 +139,7 @@ public class CategoriaProdutoNegocio {
         }
     }
 
+    // Busca uma categoria pelo codigo informado.
     public CategoriaProdutoDTO pesquisaCodigo(int codigo) throws NotFoundException {
         try {
             logger.info("Pesquisando categoria de produto pelo codigo {}", codigo);

@@ -18,6 +18,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Municipio de atuacao de promotores.")
+// Transporta dados de municipio pela API.
 public class MunicipioDTO {
 
     @Schema(description = "Codigo identificador do municipio", example = "1")

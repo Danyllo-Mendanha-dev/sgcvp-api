@@ -18,6 +18,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Resumo de cliente com valor total vendido em um periodo.")
+// Transporta o resumo de vendas por cliente.
 public class ClienteValorVendidoDTO {
 
     @Schema(description = "Codigo identificador do cliente", example = "1")

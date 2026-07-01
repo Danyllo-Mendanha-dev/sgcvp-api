@@ -25,6 +25,7 @@ import lombok.Setter;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "cliente")
+// Representa um cliente atendido por um promotor.
 public class Cliente {
 
     @Id
@@ -59,6 +60,7 @@ public class Cliente {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
 
+    // Valida dados cadastrais e vinculo com promotor.
     public String validar() {
         String retorno = "";
 

@@ -2,9 +2,6 @@ package ifmt.cba.sgcvp.entity;
 
 import java.math.BigDecimal;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -21,14 +18,17 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = "pedidoCompra")
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "item_pedido_compra")
+// Representa um item incluido em um pedido de compra.
 public class ItemPedidoCompra {
 
     @Id
@@ -48,11 +48,7 @@ public class ItemPedidoCompra {
     @JoinColumn(name = "id_compra", nullable = false)
     private PedidoCompra pedidoCompra;
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
-
+    // Valida quantidade e produto do item de compra.
     public String validar() {
         String retorno = "";
 

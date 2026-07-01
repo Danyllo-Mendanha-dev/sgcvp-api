@@ -21,6 +21,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Item que compoe um pedido de compra.")
+// Transporta item de pedido de compra pela API.
 public class ItemPedidoCompraDTO {
 
     @Schema(description = "Codigo identificador do item do pedido de compra", example = "1")

@@ -28,6 +28,7 @@ import lombok.Setter;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "lancamento_comissao")
+// Representa uma comissao gerada a partir de uma venda.
 public class LancamentoComissao {
 
     @Id
@@ -57,6 +58,7 @@ public class LancamentoComissao {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
 
+    // Valida dados obrigatorios do lancamento de comissao.
     public String validar() {
         String retorno = "";
 

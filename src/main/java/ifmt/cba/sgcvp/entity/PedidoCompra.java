@@ -4,9 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,14 +20,17 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = "listaItemPedidoCompra")
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "pedido_compra")
+// Representa uma compra realizada junto a fornecedor.
 public class PedidoCompra {
 
     @Id
@@ -54,11 +54,7 @@ public class PedidoCompra {
     @OneToMany(mappedBy = "pedidoCompra", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<ItemPedidoCompra> listaItemPedidoCompra = new ArrayList<ItemPedidoCompra>();
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
-
+    // Valida cabecalho, fornecedor e itens da compra.
     public String validar() {
         String retorno = "";
 

@@ -20,6 +20,7 @@ import ifmt.cba.sgcvp.repository.ClienteRepository;
 import ifmt.cba.sgcvp.repository.PromotorRepository;
 
 @Service
+// Centraliza as regras de cadastro e consulta de clientes.
 public class ClienteNegocio {
 
     private static final Logger logger = LoggerFactory.getLogger(ClienteNegocio.class);
@@ -36,6 +37,7 @@ public class ClienteNegocio {
         this.modelMapper = new ModelMapper();
     }
 
+    // Valida e cadastra um novo cliente.
     public ClienteDTO inserir(ClienteDTO clienteDTO) throws NotValidDataException, NotFoundException {
 
         Cliente cliente = this.toEntity(clienteDTO);
@@ -63,6 +65,7 @@ public class ClienteNegocio {
         return this.toDTO(cliente);
     }
 
+    // Valida e atualiza um cliente existente.
     public ClienteDTO alterar(ClienteDTO clienteDTO) throws NotValidDataException, NotFoundException {
 
         Cliente cliente = this.toEntity(clienteDTO);
@@ -88,6 +91,7 @@ public class ClienteNegocio {
         return this.toDTO(cliente);
     }
 
+    // Exclui um cliente pelo codigo informado.
     public void excluir(int codigo) throws NotValidDataException, NotFoundException {
 
         try {
@@ -103,6 +107,7 @@ public class ClienteNegocio {
         }
     }
 
+    // Retorna todos os clientes cadastrados.
     public List<ClienteDTO> pesquisaTodos() throws NotFoundException {
         try {
             logger.info("Pesquisando todos os clientes");
@@ -113,6 +118,7 @@ public class ClienteNegocio {
         }
     }
 
+    // Busca um cliente pelo inicio da razao social.
     public ClienteDTO pesquisaPorRazaoSocial(String parteRazaoSocial) throws NotFoundException {
         try {
             logger.info("Pesquisando cliente pela razao social {}", parteRazaoSocial);
@@ -123,6 +129,7 @@ public class ClienteNegocio {
         }
     }
 
+    // Busca um cliente pelo CNPJ exato.
     public ClienteDTO pesquisaPorCNPJ(String CNPJ) throws NotFoundException {
         try {
             logger.info("Pesquisando cliente pelo CNPJ {}", CNPJ);
@@ -133,6 +140,7 @@ public class ClienteNegocio {
         }
     }
 
+    // Busca um cliente pelo codigo informado.
     public ClienteDTO pesquisaCodigo(int codigo) throws NotFoundException {
         try {
             logger.info("Pesquisando cliente pelo codigo {}", codigo);
@@ -143,6 +151,7 @@ public class ClienteNegocio {
         }
     }
 
+    // Lista clientes de um promotor ordenados pelo valor vendido.
     public List<ClienteValorVendidoDTO> pesquisaClientesPorPromotorValorVendido(int codigoPromotor,
             LocalDate dataInicial, LocalDate dataFinal) throws NotFoundException {
         try {

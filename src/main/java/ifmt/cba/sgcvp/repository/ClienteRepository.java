@@ -11,6 +11,7 @@ import ifmt.cba.sgcvp.dto.ClienteValorVendidoDTO;
 import ifmt.cba.sgcvp.entity.Cliente;
 import ifmt.cba.sgcvp.entity.Promotor;
 
+// Acessa dados persistidos de clientes.
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
     Cliente findByCNPJ(String CNPJ);

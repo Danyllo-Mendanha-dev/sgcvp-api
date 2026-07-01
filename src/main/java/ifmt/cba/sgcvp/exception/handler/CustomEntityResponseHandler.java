@@ -20,9 +20,11 @@ import java.util.Date;
 
 @ControllerAdvice
 @RestController
+// Converte excecoes da aplicacao em respostas HTTP padronizadas.
 public class CustomEntityResponseHandler  extends ResponseEntityExceptionHandler{
 
     @ExceptionHandler(Exception.class)
+    // Trata erros nao previstos como erro interno.
     public final ResponseEntity<ExceptionResponse> handleAllException(Exception ex, WebRequest request){
         ExceptionResponse response = new ExceptionResponse(
             new Date(), 
@@ -33,6 +35,7 @@ public class CustomEntityResponseHandler  extends ResponseEntityExceptionHandler
     }
 
     @ExceptionHandler(NotFoundException.class)
+    // Trata recursos inexistentes como resposta 404.
     public final ResponseEntity<ExceptionResponse> handleNotFoundException(Exception ex, WebRequest request){
         ExceptionResponse response = new ExceptionResponse(
             new Date(), 
@@ -43,6 +46,7 @@ public class CustomEntityResponseHandler  extends ResponseEntityExceptionHandler
     }
 
     @ExceptionHandler(NotValidDataException.class)
+    // Trata dados invalidos como resposta 400.
     public final ResponseEntity<ExceptionResponse> handleValidDataException(Exception ex, WebRequest request){
         ExceptionResponse response = new ExceptionResponse(
             new Date(), 
@@ -53,6 +57,7 @@ public class CustomEntityResponseHandler  extends ResponseEntityExceptionHandler
     }
 
     @ExceptionHandler(EstoqueInsuficienteException.class)
+    // Trata falta de estoque como resposta 422.
     public final ResponseEntity<ExceptionResponse> handleEstoqueInsuficienteException(Exception ex, WebRequest request){
         ExceptionResponse response = new ExceptionResponse(
             new Date(),
@@ -63,6 +68,7 @@ public class CustomEntityResponseHandler  extends ResponseEntityExceptionHandler
     }
 
     @ExceptionHandler(TransicaoEstadoInvalidaException.class)
+    // Trata transicoes invalidas de status como resposta 422.
     public final ResponseEntity<ExceptionResponse> handleTransicaoEstadoInvalidaException(Exception ex, WebRequest request){
         ExceptionResponse response = new ExceptionResponse(
             new Date(),
@@ -73,6 +79,7 @@ public class CustomEntityResponseHandler  extends ResponseEntityExceptionHandler
     }
 
     @Override
+    // Trata falhas de validacao Bean Validation como resposta 400.
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
             HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         String mensagem = ex.getBindingResult()

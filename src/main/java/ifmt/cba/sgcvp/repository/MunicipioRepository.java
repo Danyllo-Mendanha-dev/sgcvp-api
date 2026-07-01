@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import ifmt.cba.sgcvp.entity.Municipio;
 
+// Acessa dados persistidos de municipios.
 public interface MunicipioRepository extends JpaRepository<Municipio, Integer> {
 
     Municipio findByNomeIgnoreCaseStartingWith(String nome);

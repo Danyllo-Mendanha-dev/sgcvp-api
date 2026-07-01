@@ -45,6 +45,7 @@ import jakarta.validation.Valid;
         @ApiResponse(responseCode = "404", description = "Recurso nao encontrado"),
         @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
 })
+// Expoe endpoints REST para cadastro e fluxo de pedidos de venda.
 public class PedidoVendaController {
 
     private static final Logger logger = LoggerFactory.getLogger(PedidoVendaController.class);

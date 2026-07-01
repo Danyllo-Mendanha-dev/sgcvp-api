@@ -4,9 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,14 +20,17 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = "listaItemPedidoVenda")
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "pedido_venda")
+// Representa uma venda realizada para um cliente.
 public class PedidoVenda {
 
     @Id
@@ -44,6 +44,12 @@ public class PedidoVenda {
     @Column(name = "status", length = 40, nullable = false)
     private String status;
 
+    @Column(name = "forma_pagamento", length = 50)
+    private String formaPagamento;
+
+    @Column(name = "data_execucao_prevista")
+    private LocalDate dataExecucaoPrevista;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
@@ -55,11 +61,7 @@ public class PedidoVenda {
     @OneToMany(mappedBy = "pedidoVenda", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<ItemPedidoVenda> listaItemPedidoVenda = new ArrayList<ItemPedidoVenda>();
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
-
+    // Valida cabecalho, cliente, promotor e itens da venda.
     public String validar() {
         String retorno = "";
 
@@ -69,6 +71,10 @@ public class PedidoVenda {
 
         if (this.status == null || this.status.length() < 3 || this.status.length() > 40) {
             retorno += "Status invalido";
+        }
+
+        if (this.formaPagamento != null && this.formaPagamento.length() > 50) {
+            retorno += "Forma de pagamento invalida";
         }
 
         if (this.cliente == null || this.cliente.getCodigo() <= 0) {

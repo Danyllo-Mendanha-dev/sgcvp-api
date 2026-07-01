@@ -19,6 +19,7 @@ import ifmt.cba.sgcvp.repository.LancamentoComissaoRepository;
 import ifmt.cba.sgcvp.repository.PromotorRepository;
 
 @Service
+// Centraliza as regras de consulta e quitacao de comissoes.
 public class LancamentoComissaoNegocio {
 
     private static final Logger logger = LoggerFactory.getLogger(LancamentoComissaoNegocio.class);
@@ -37,6 +38,7 @@ public class LancamentoComissaoNegocio {
         this.modelMapper = new ModelMapper();
     }
 
+    // Retorna todos os lancamentos de comissao.
     public List<LancamentoComissaoDTO> pesquisaTodos() throws NotFoundException {
         try {
             logger.info("Pesquisando todos os lancamentos de comissao");
@@ -47,6 +49,7 @@ public class LancamentoComissaoNegocio {
         }
     }
 
+    // Lista lancamentos filtrados por status.
     public List<LancamentoComissaoDTO> pesquisaPorStatus(String status) throws NotFoundException {
         try {
             logger.info("Pesquisando lancamentos de comissao pelo status {}", status);
@@ -57,6 +60,7 @@ public class LancamentoComissaoNegocio {
         }
     }
 
+    // Busca um lancamento de comissao pelo codigo.
     public LancamentoComissaoDTO pesquisaCodigo(int codigo) throws NotFoundException {
         try {
             logger.info("Pesquisando lancamento de comissao pelo codigo {}", codigo);
@@ -67,6 +71,7 @@ public class LancamentoComissaoNegocio {
         }
     }
 
+    // Lista comissoes por status, periodo e promotor.
     public List<LancamentoComissaoDTO> pesquisaPorStatusPeriodoPromotor(String status, LocalDate dataInicial,
             LocalDate dataFinal, int codigoPromotor) throws NotFoundException {
         try {
@@ -86,17 +91,20 @@ public class LancamentoComissaoNegocio {
         }
     }
 
+    // Lista comissoes lancadas por promotor no periodo.
     public List<LancamentoComissaoDTO> pesquisaLancadasPeriodoPromotor(LocalDate dataInicial, LocalDate dataFinal,
             int codigoPromotor) throws NotFoundException {
         return this.pesquisaPorStatusPeriodoPromotor(LANCADA, dataInicial, dataFinal, codigoPromotor);
     }
 
+    // Lista comissoes quitadas por promotor no periodo.
     public List<LancamentoComissaoDTO> pesquisaQuitadasPeriodoPromotor(LocalDate dataInicial, LocalDate dataFinal,
             int codigoPromotor) throws NotFoundException {
         return this.pesquisaPorStatusPeriodoPromotor(QUITADA, dataInicial, dataFinal, codigoPromotor);
     }
 
     @Transactional
+    // Quita uma comissao somente quando ela esta lancada.
     public LancamentoComissaoDTO quitar(int codigo) throws NotFoundException, TransicaoEstadoInvalidaException {
         LancamentoComissao lancamentoComissao = lancamentoComissaoRepository.findById(codigo)
                 .orElseThrow(() -> new NotFoundException("Nao existe esse lancamento de comissao"));

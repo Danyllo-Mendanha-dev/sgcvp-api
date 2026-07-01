@@ -22,6 +22,7 @@ import lombok.Setter;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "municipio")
+// Representa um municipio atendido por promotores.
 public class Municipio {
 
     @Id
@@ -40,6 +41,7 @@ public class Municipio {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
 
+    // Valida nome e UF do municipio.
     public String validar() {
         String retorno = "";
 

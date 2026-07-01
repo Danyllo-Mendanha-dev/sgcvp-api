@@ -25,6 +25,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Pedido de venda realizado para um cliente.")
+// Transporta dados de pedido de venda pela API.
 public class PedidoVendaDTO {
 
     @Schema(description = "Codigo identificador do pedido de venda", example = "1")
@@ -38,6 +39,13 @@ public class PedidoVendaDTO {
     @NotBlank(message = "Status e obrigatorio")
     @Size(max = 40, message = "Status deve possuir no maximo 40 caracteres")
     private String status;
+
+    @Schema(description = "Forma de pagamento do pedido de venda", example = "BOLETO")
+    @Size(max = 50, message = "Forma de pagamento deve possuir no maximo 50 caracteres")
+    private String formaPagamento;
+
+    @Schema(description = "Data prevista para execucao do pedido de venda", example = "2026-07-05")
+    private LocalDate dataExecucaoPrevista;
 
     @Schema(description = "Cliente vinculado ao pedido de venda")
     @NotNull(message = "Cliente e obrigatorio")

@@ -25,6 +25,7 @@ import ifmt.cba.sgcvp.repository.PedidoCompraRepository;
 import ifmt.cba.sgcvp.repository.ProdutoRepository;
 
 @Service
+// Centraliza as regras de cadastro e processamento de pedidos de compra.
 public class PedidoCompraNegocio {
 
     private static final Logger logger = LoggerFactory.getLogger(PedidoCompraNegocio.class);
@@ -47,6 +48,7 @@ public class PedidoCompraNegocio {
         this.modelMapper = new ModelMapper();
     }
 
+    // Valida e cadastra um novo pedido de compra.
     public PedidoCompraDTO inserir(PedidoCompraDTO pedidoCompraDTO) throws NotValidDataException, NotFoundException {
 
         PedidoCompra pedidoCompra = this.toEntity(pedidoCompraDTO);
@@ -75,6 +77,7 @@ public class PedidoCompraNegocio {
         return this.toDTO(pedidoCompra);
     }
 
+    // Valida e atualiza um pedido de compra existente.
     public PedidoCompraDTO alterar(PedidoCompraDTO pedidoCompraDTO) throws NotValidDataException, NotFoundException {
 
         PedidoCompra pedidoCompra = this.toEntity(pedidoCompraDTO);
@@ -100,6 +103,7 @@ public class PedidoCompraNegocio {
         return this.toDTO(pedidoCompra);
     }
 
+    // Exclui um pedido de compra pelo codigo informado.
     public void excluir(int codigo) throws NotValidDataException, NotFoundException {
         try {
             PedidoCompra pedidoCompra = pedidoCompraRepository.findById(codigo)
@@ -114,6 +118,7 @@ public class PedidoCompraNegocio {
         }
     }
 
+    // Retorna todos os pedidos de compra cadastrados.
     public List<PedidoCompraDTO> pesquisaTodos() throws NotFoundException {
         try {
             logger.info("Pesquisando todos os pedidos de compra");
@@ -124,6 +129,7 @@ public class PedidoCompraNegocio {
         }
     }
 
+    // Busca um pedido de compra pela nota fiscal.
     public PedidoCompraDTO pesquisaPorNotaFiscal(String numNotaFiscal) throws NotFoundException {
         try {
             logger.info("Pesquisando pedido de compra pela nota fiscal {}", numNotaFiscal);
@@ -134,6 +140,7 @@ public class PedidoCompraNegocio {
         }
     }
 
+    // Busca um pedido de compra pelo codigo informado.
     public PedidoCompraDTO pesquisaCodigo(int codigo) throws NotFoundException {
         try {
             logger.info("Pesquisando pedido de compra pelo codigo {}", codigo);
@@ -145,6 +152,7 @@ public class PedidoCompraNegocio {
     }
 
     @Transactional
+    // Altera o pedido de compra de digitada para conferida.
     public PedidoCompraDTO conferir(int codigo) throws NotFoundException, TransicaoEstadoInvalidaException {
         PedidoCompra pedidoCompra = this.pesquisarPedidoCompra(codigo);
         this.validarTransicao(pedidoCompra, DIGITADA, CONFERIDA);
@@ -155,6 +163,7 @@ public class PedidoCompraNegocio {
     }
 
     @Transactional
+    // Processa a compra e soma as quantidades ao estoque.
     public PedidoCompraDTO processar(int codigo)
             throws NotFoundException, TransicaoEstadoInvalidaException, EstoqueInsuficienteException {
         PedidoCompra pedidoCompra = this.pesquisarPedidoCompra(codigo);

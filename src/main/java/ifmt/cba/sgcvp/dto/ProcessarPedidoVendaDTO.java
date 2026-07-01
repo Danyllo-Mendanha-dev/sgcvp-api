@@ -17,6 +17,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Dados necessarios para processar um pedido de venda.")
+// Transporta parametros para processamento de pedido de venda.
 public class ProcessarPedidoVendaDTO {
 
     @Schema(description = "Percentual de comissao aplicado ao processamento do pedido", example = "5.00")

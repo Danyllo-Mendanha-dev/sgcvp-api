@@ -31,6 +31,7 @@ import ifmt.cba.sgcvp.repository.ProdutoRepository;
 import ifmt.cba.sgcvp.repository.PromotorRepository;
 
 @Service
+// Centraliza as regras de cadastro, aprovacao e processamento de vendas.
 public class PedidoVendaNegocio {
 
     private static final Logger logger = LoggerFactory.getLogger(PedidoVendaNegocio.class);
@@ -63,6 +64,7 @@ public class PedidoVendaNegocio {
         this.modelMapper = new ModelMapper();
     }
 
+    // Valida e cadastra um novo pedido de venda.
     public PedidoVendaDTO inserir(PedidoVendaDTO pedidoVendaDTO) throws NotValidDataException, NotFoundException {
 
         PedidoVenda pedidoVenda = this.toEntity(pedidoVendaDTO);
@@ -87,6 +89,7 @@ public class PedidoVendaNegocio {
         return this.toDTO(pedidoVenda);
     }
 
+    // Valida e atualiza um pedido de venda existente.
     public PedidoVendaDTO alterar(PedidoVendaDTO pedidoVendaDTO) throws NotValidDataException, NotFoundException {
 
         PedidoVenda pedidoVenda = this.toEntity(pedidoVendaDTO);
@@ -112,6 +115,7 @@ public class PedidoVendaNegocio {
         return this.toDTO(pedidoVenda);
     }
 
+    // Exclui um pedido de venda pelo codigo informado.
     public void excluir(int codigo) throws NotValidDataException, NotFoundException {
         try {
             PedidoVenda pedidoVenda = pedidoVendaRepository.findById(codigo)
@@ -126,6 +130,7 @@ public class PedidoVendaNegocio {
         }
     }
 
+    // Retorna todos os pedidos de venda cadastrados.
     public List<PedidoVendaDTO> pesquisaTodos() throws NotFoundException {
         try {
             logger.info("Pesquisando todos os pedidos de venda");
@@ -136,6 +141,7 @@ public class PedidoVendaNegocio {
         }
     }
 
+    // Lista pedidos de venda filtrados por status.
     public List<PedidoVendaDTO> pesquisaPorStatus(String status) throws NotFoundException {
         try {
             logger.info("Pesquisando pedidos de venda pelo status {}", status);
@@ -146,6 +152,7 @@ public class PedidoVendaNegocio {
         }
     }
 
+    // Busca um pedido de venda pelo codigo informado.
     public PedidoVendaDTO pesquisaCodigo(int codigo) throws NotFoundException {
         try {
             logger.info("Pesquisando pedido de venda pelo codigo {}", codigo);
@@ -157,6 +164,7 @@ public class PedidoVendaNegocio {
     }
 
     @Transactional
+    // Aprova estoque quando ha quantidade disponivel para o pedido.
     public PedidoVendaDTO aprovarEstoque(int codigo)
             throws NotFoundException, TransicaoEstadoInvalidaException, EstoqueInsuficienteException {
         PedidoVenda pedidoVenda = this.pesquisarPedidoVenda(codigo);
@@ -169,6 +177,7 @@ public class PedidoVendaNegocio {
     }
 
     @Transactional
+    // Marca o pedido como pendente quando nao ha estoque suficiente.
     public PedidoVendaDTO pendenteEstoque(int codigo)
             throws NotFoundException, TransicaoEstadoInvalidaException {
         PedidoVenda pedidoVenda = this.pesquisarPedidoVenda(codigo);
@@ -180,6 +189,7 @@ public class PedidoVendaNegocio {
     }
 
     @Transactional
+    // Aprova a venda apos a aprovacao de estoque.
     public PedidoVendaDTO aprovarVenda(int codigo)
             throws NotFoundException, TransicaoEstadoInvalidaException {
         PedidoVenda pedidoVenda = this.pesquisarPedidoVenda(codigo);
@@ -191,6 +201,7 @@ public class PedidoVendaNegocio {
     }
 
     @Transactional
+    // Reprova a venda apos a etapa de estoque.
     public PedidoVendaDTO reprovarVenda(int codigo)
             throws NotFoundException, TransicaoEstadoInvalidaException {
         PedidoVenda pedidoVenda = this.pesquisarPedidoVenda(codigo);
@@ -202,6 +213,7 @@ public class PedidoVendaNegocio {
     }
 
     @Transactional
+    // Baixa estoque e gera lancamento de comissao para a venda.
     public PedidoVendaDTO processar(int codigo, BigDecimal percentualComissao)
             throws NotFoundException, TransicaoEstadoInvalidaException, EstoqueInsuficienteException,
             NotValidDataException {
@@ -320,6 +332,8 @@ public class PedidoVendaNegocio {
         pedidoVendaDTO.setCodigo(pedidoVenda.getCodigo());
         pedidoVendaDTO.setDataPedido(pedidoVenda.getDataPedido());
         pedidoVendaDTO.setStatus(pedidoVenda.getStatus());
+        pedidoVendaDTO.setFormaPagamento(pedidoVenda.getFormaPagamento());
+        pedidoVendaDTO.setDataExecucaoPrevista(pedidoVenda.getDataExecucaoPrevista());
         pedidoVendaDTO.setCliente(this.modelMapper.map(pedidoVenda.getCliente(), ifmt.cba.sgcvp.dto.ClienteDTO.class));
         pedidoVendaDTO.setPromotor(this.modelMapper.map(pedidoVenda.getPromotor(), ifmt.cba.sgcvp.dto.PromotorDTO.class));
 
@@ -341,6 +355,8 @@ public class PedidoVendaNegocio {
         pedidoVenda.setCodigo(pedidoVendaDTO.getCodigo());
         pedidoVenda.setDataPedido(pedidoVendaDTO.getDataPedido());
         pedidoVenda.setStatus(pedidoVendaDTO.getStatus());
+        pedidoVenda.setFormaPagamento(pedidoVendaDTO.getFormaPagamento());
+        pedidoVenda.setDataExecucaoPrevista(pedidoVendaDTO.getDataExecucaoPrevista());
         if (pedidoVendaDTO.getCliente() != null) {
             Cliente cliente = new Cliente();
             cliente.setCodigo(pedidoVendaDTO.getCliente().getCodigo());

@@ -20,6 +20,7 @@ import ifmt.cba.sgcvp.repository.MunicipioRepository;
 import ifmt.cba.sgcvp.repository.PromotorRepository;
 
 @Service
+// Centraliza as regras de cadastro e consulta de promotores.
 public class PromotorNegocio {
 
     private static final Logger logger = LoggerFactory.getLogger(PromotorNegocio.class);
@@ -39,6 +40,7 @@ public class PromotorNegocio {
         this.modelMapper = new ModelMapper();
     }
 
+    // Valida e cadastra um novo promotor.
     public PromotorDTO inserir(PromotorDTO promotorDTO) throws NotValidDataException, NotFoundException {
 
         Promotor promotor = this.toEntity(promotorDTO);
@@ -67,6 +69,7 @@ public class PromotorNegocio {
         return this.toDTO(promotor);
     }
 
+    // Valida e atualiza um promotor existente.
     public PromotorDTO alterar(PromotorDTO promotorDTO) throws NotValidDataException, NotFoundException {
 
         Promotor promotor = this.toEntity(promotorDTO);
@@ -92,6 +95,7 @@ public class PromotorNegocio {
         return this.toDTO(promotor);
     }
 
+    // Exclui um promotor se ele nao estiver vinculado a clientes.
     public void excluir(int codigo) throws NotValidDataException, NotFoundException {
         try {
             Promotor promotor = promotorRepository.findById(codigo)
@@ -111,6 +115,7 @@ public class PromotorNegocio {
         }
     }
 
+    // Retorna todos os promotores cadastrados.
     public List<PromotorDTO> pesquisaTodos() throws NotFoundException {
         try {
             logger.info("Pesquisando todos os promotores");
@@ -121,6 +126,7 @@ public class PromotorNegocio {
         }
     }
 
+    // Busca um promotor pelo inicio do nome.
     public PromotorDTO pesquisaPorNome(String parteNome) throws NotFoundException {
         try {
             logger.info("Pesquisando promotor pelo nome {}", parteNome);
@@ -131,6 +137,7 @@ public class PromotorNegocio {
         }
     }
 
+    // Busca um promotor pelo codigo informado.
     public PromotorDTO pesquisaCodigo(int codigo) throws NotFoundException {
         try {
             logger.info("Pesquisando promotor pelo codigo {}", codigo);
@@ -141,6 +148,7 @@ public class PromotorNegocio {
         }
     }
 
+    // Lista os municipios atendidos por um promotor.
     public List<MunicipioDTO> pesquisaMunicipiosAtendidos(int codigoPromotor) throws NotFoundException {
         try {
             if (promotorRepository.findById(codigoPromotor).isEmpty()) {

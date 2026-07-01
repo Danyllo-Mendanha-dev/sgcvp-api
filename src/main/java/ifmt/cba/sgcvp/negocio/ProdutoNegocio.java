@@ -18,6 +18,7 @@ import ifmt.cba.sgcvp.repository.CategoriaProdutoRepository;
 import ifmt.cba.sgcvp.repository.ProdutoRepository;
 
 @Service
+// Centraliza as regras de cadastro, consulta e estoque de produtos.
 public class ProdutoNegocio {
 
     private static final Logger logger = LoggerFactory.getLogger(ProdutoNegocio.class);
@@ -34,6 +35,7 @@ public class ProdutoNegocio {
         this.modelMapper = new ModelMapper();
     }
 
+    // Valida e cadastra um novo produto.
     public ProdutoDTO inserir(ProdutoDTO produtoDTO) throws NotValidDataException, NotFoundException {
 
         Produto produto = this.toEntity(produtoDTO);
@@ -62,6 +64,7 @@ public class ProdutoNegocio {
         return this.toDTO(produto);
     }
 
+    // Valida e atualiza um produto existente.
     public ProdutoDTO alterar(ProdutoDTO produtoDTO) throws NotValidDataException, NotFoundException {
 
         Produto produto = this.toEntity(produtoDTO);
@@ -87,6 +90,7 @@ public class ProdutoNegocio {
         return this.toDTO(produto);
     }
 
+    // Exclui um produto pelo codigo informado.
     public void excluir(int codigo) throws NotValidDataException, NotFoundException {
         try {
             Produto produto = produtoRepository.findById(codigo)
@@ -101,6 +105,7 @@ public class ProdutoNegocio {
         }
     }
 
+    // Retorna todos os produtos cadastrados.
     public List<ProdutoDTO> pesquisaTodos() throws NotFoundException {
         try {
             logger.info("Pesquisando todos os produtos");
@@ -111,6 +116,7 @@ public class ProdutoNegocio {
         }
     }
 
+    // Busca um produto pelo inicio do nome.
     public ProdutoDTO pesquisaPorNome(String parteNome) throws NotFoundException {
         try {
             logger.info("Pesquisando produto pelo nome {}", parteNome);
@@ -121,6 +127,7 @@ public class ProdutoNegocio {
         }
     }
 
+    // Busca um produto pelo codigo informado.
     public ProdutoDTO pesquisaCodigo(int codigo) throws NotFoundException {
         try {
             logger.info("Pesquisando produto pelo codigo {}", codigo);
@@ -131,6 +138,7 @@ public class ProdutoNegocio {
         }
     }
 
+    // Lista produtos de uma categoria ordenados por nome.
     public List<ProdutoDTO> pesquisaPorCategoriaOrdenadoPorNome(int codigoCategoria) throws NotFoundException {
         try {
             CategoriaProduto categoriaProduto = this.pesquisarCategoriaProduto(codigoCategoria);
@@ -144,6 +152,7 @@ public class ProdutoNegocio {
         }
     }
 
+    // Lista produtos de uma categoria por estoque decrescente.
     public List<ProdutoDTO> pesquisaPorCategoriaOrdenadoPorEstoqueDecrescente(int codigoCategoria) throws NotFoundException {
         try {
             CategoriaProduto categoriaProduto = this.pesquisarCategoriaProduto(codigoCategoria);
@@ -158,6 +167,7 @@ public class ProdutoNegocio {
         }
     }
 
+    // Lista produtos com estoque abaixo do minimo cadastrado.
     public List<ProdutoDTO> pesquisaProdutosAbaixoEstoqueMinimo() throws NotFoundException {
         try {
             logger.info("Pesquisando produtos abaixo do estoque minimo");

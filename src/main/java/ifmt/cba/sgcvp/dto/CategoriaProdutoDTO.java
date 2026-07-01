@@ -1,5 +1,7 @@
 package ifmt.cba.sgcvp.dto;
 
+import java.math.BigDecimal;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -16,6 +18,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Schema(description = "Dados de uma categoria de produtos.")
+// Transporta dados de categoria de produto pela API.
 public class CategoriaProdutoDTO {
 
     @Schema(description = "Codigo identificador da categoria de produto", example = "1")
@@ -24,6 +27,10 @@ public class CategoriaProdutoDTO {
     private String nome;
     @Schema(description = "Descricao da categoria de produto", example = "Produtos liquidos destinados a venda")
     private String descricao;
+    @Schema(description = "Percentual de comissao padrao da categoria", example = "5.00")
+    private BigDecimal percentualComissao;
+    @Schema(description = "Percentual de desconto padrao da categoria", example = "10.00")
+    private BigDecimal percentualDesconto;
 
     @Override
     public String toString() {

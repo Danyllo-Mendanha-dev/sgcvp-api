@@ -3,9 +3,6 @@ package ifmt.cba.sgcvp.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,14 +19,17 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = "listaCliente")
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "promotor")
+// Representa um promotor de vendas e seus municipios.
 public class Promotor {
 
     @Id
@@ -49,11 +49,7 @@ public class Promotor {
     @OneToMany(mappedBy = "promotor", fetch = FetchType.LAZY)
     private List<Cliente> listaCliente = new ArrayList<Cliente>();
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
-
+    // Valida nome e municipios atendidos pelo promotor.
     public String validar() {
         String retorno = "";
 
